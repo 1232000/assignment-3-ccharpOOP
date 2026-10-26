@@ -25,7 +25,11 @@ public class Cinema
         foreach (var ticket in _tickets)
         {
             if (ticket != null)
-                Console.WriteLine(ticket);
+            {
+                ticket.PrintTicket();
+                Console.WriteLine("-----------");
+
+            }
         }
         
         Console.WriteLine("\n========= Statistics =========");
@@ -72,7 +76,7 @@ public class Cinema
     {
         foreach (var ticket in _tickets)
         {
-            if (ticket.MovieName == movieName)
+            if (ticket != null && ticket.MovieName == movieName)
                 return ticket;
         }
         return null;

@@ -6,4 +6,10 @@ public class StandardTicket(string movie, decimal price, string seat) : Ticket(m
     {
         return base.ToString() + $" | Seat: {SeatNumber}";
     }
+    // assignment 4-----------------------------------
+    public override void PrintTicket()
+    {
+        base.PrintTicket();
+        Console.WriteLine($"Seat Number: {SeatNumber}");
+    }
 }

@@ -9,4 +9,12 @@ public class VIPTicket(string movie, decimal price, bool isLounge) : Ticket(movi
     {
         return base.ToString() + $" | Lounge: {(LoungeAccess ? "Yes" : "No")} | ServiceFee: {_serviceFee} EGP";
     }
+
+    // assignment 4-----------------------------------
+    public override void PrintTicket()
+    {
+        base.PrintTicket();
+        Console.WriteLine($"Lounge Access: {(LoungeAccess ? "Yes" : "No")}");
+        Console.WriteLine($"Service Fee: {_serviceFee} EGP");
+    }
 }

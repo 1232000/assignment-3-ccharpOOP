@@ -5,7 +5,7 @@ public class Ticket
     private string _movieName ;
     protected decimal price;
     private static int _ticketCounter = 0;
-// property-----------------------------------
+
     public string MovieName
     {
         get => _movieName;
@@ -28,9 +28,7 @@ public class Ticket
     }
     public int TicketId {get;}
     public decimal PriceAfterTax => price * 1.14m;
-// Get Total Tickets Sold-----------------------------------
     public static int GetTotalTickets() => _ticketCounter;
-// constructor-----------------------------------
     public Ticket(string movieName, decimal price)
     {
         _ticketCounter++;
@@ -38,8 +36,30 @@ public class Ticket
         _movieName = movieName;
         this.price = price;
     }
+
+//assignment 4-----------------------------------
+    // overloading
+    public void SetPrice(decimal newPrice)
+    {
+        Price = newPrice;
+    }
+
+    public void SetPrice(decimal basePrice, decimal multiplier)
+    {
+        Price = basePrice * multiplier;
+    }
+
+    // overriding
+    public virtual void PrintTicket()
+    {
+        Console.WriteLine($"Ticket id: {TicketId}");
+        Console.WriteLine($"Movie Name: {MovieName}");
+        Console.WriteLine($"Price: {Price} EGP");
+        Console.WriteLine($"Price After Tax: {PriceAfterTax} EGP");
+    }
+
 // ToString-----------------------------------
-     public override string ToString()
+    public override string ToString()
      {
          return $"Ticket #{TicketId} | {MovieName} | Price: {Price} EGP | After Tax: {PriceAfterTax}";
      }

@@ -15,4 +15,11 @@ public class IMAXTicket : Ticket
     {
         return base.ToString() + $" | IMAX 3D: {(Is3D ? "Yes" : "No")}";
     }
+
+    // assignment 4-----------------------------------
+    public override void PrintTicket()
+    {
+        base.PrintTicket();
+        Console.WriteLine($"IMAX 3D: {(Is3D ? "Yes" : "No")}");
+    }
 }
